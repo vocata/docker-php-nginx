@@ -14,16 +14,27 @@ RUN apk add --no-cache \
   php81-curl \
   php81-dom \
   php81-fpm \
+  php81-fileinfo \
+  php81-ftp \
   php81-gd \
+  php81-iconv \
   php81-intl \
   php81-mbstring \
   php81-mysqli \
+  php81-mysqlnd \
   php81-opcache \
   php81-openssl \
+  php81-pdo \
   php81-phar \
+  php81-posix \
   php81-session \
+  php81-sodium \
+  php81-sqlite3 \
+  php81-tokenizer \
   php81-xml \
   php81-xmlreader \
+  php81-xmlwriter \
+  php81-zlib \
   supervisor
 
 # Create symlink so programs depending on `php` still function
