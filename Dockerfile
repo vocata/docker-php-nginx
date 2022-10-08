@@ -3,7 +3,7 @@ FROM alpine:${ALPINE_VERSION}
 LABEL Maintainer="Tim de Pater <code@trafex.nl>"
 LABEL Description="Lightweight container with Nginx 1.22 & PHP 8.1 based on Alpine Linux."
 # Setup document root
-WORKDIR /var/www/html
+WORKDIR /var/www/app/public
 
 # Install packages and remove default server definition
 RUN apk add --no-cache \
@@ -40,13 +40,13 @@ COPY config/php.ini /etc/php81/conf.d/custom.ini
 COPY config/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 
 # Make sure files/folders needed by the processes are accessable when they run under the nobody user
-RUN chown -R nobody.nobody /var/www/html /run /var/lib/nginx /var/log/nginx
+RUN chown -R nobody.nobody /var/www/app /run /var/lib/nginx /var/log/nginx
 
 # Switch to use a non-root user from here on
 USER nobody
 
 # Add application
-COPY --chown=nobody src/ /var/www/html/
+COPY --chown=nobody /src /var/www/app
 
 # Expose the port nginx is reachable on
 EXPOSE 8080
