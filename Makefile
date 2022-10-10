@@ -1,5 +1,5 @@
 TAG            = 1.0.0
-IMAGE_NAME     = vocata/php-nginx-common
+IMAGE_NAME     = mangydog/php-nginx-common
 TMP_IMAGE_NAME = test-php-nginx-common
 CONTAINER_NAME = php-nginx-common
 DOCKERFILE     = ./Dockerfile
