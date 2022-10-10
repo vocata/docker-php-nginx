@@ -1,5 +1,5 @@
 TAG            = 1.0.0
-IMAGE_NAME     = vocata/php-nginx-laravel
+IMAGE_NAME     = mangydog/php-nginx-laravel
 TMP_IMAGE_NAME = test-php-nginx-laravel
 CONTAINER_NAME = php-nginx-laravel
 DOCKERFILE     = ./Dockerfile
